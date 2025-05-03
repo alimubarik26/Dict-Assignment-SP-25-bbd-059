@@ -1,0 +1,228 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "3da17ad4-e93f-42a3-9524-6b9aa8a2d050",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Name': 'ali', 'Age': 20, 'City': 'Gujrat', 'Hobbies': 'Playing'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "#A:\n",
+    "person_dict ={'Name':'ali','Age':20, 'City':'Gujrat','Hobbies':'Playing'}\n",
+    "print(person_dict)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "7f214e39-5e82-4756-921b-c9a515110764",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'hello': 2, 'python': 1, 'everyone': 1}\n"
+     ]
+    }
+   ],
+   "source": [
+    "#B:\n",
+    "text='hello python hello everyone'\n",
+    "words=text.split()\n",
+    "word_count={}\n",
+    "for word in words:\n",
+    "    if word in word_count:\n",
+    "        word_count[word]+=1\n",
+    "    else:\n",
+    "        word_count[word]=1 \n",
+    "print(word_count)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "396994d6-157c-42a4-8fdf-b60c32bad7c7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'pen': 29, 'books': 8, 'ruler': 13}\n"
+     ]
+    }
+   ],
+   "source": [
+    "#C:\n",
+    "inventory={\n",
+    "    'pen': 29,\n",
+    "    'books': 8,\n",
+    "    'ruler': 13\n",
+    "}\n",
+    "print(inventory)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "29430618-13f2-444b-8c97-af6f6e915af4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "most popular category: shoes\n"
+     ]
+    }
+   ],
+   "source": [
+    "#D:\n",
+    "orders=[\n",
+    "{'category':'shoes'},\n",
+    "{'category':'clothes'},\n",
+    "{'category':'shoes'},\n",
+    "{'category':'toys'},\n",
+    "{'category':'cap'},\n",
+    "{'category':'shoes'} \n",
+    "]\n",
+    "category_count={}\n",
+    "for order in orders:\n",
+    "    category=order['category']\n",
+    "category_count[category]=category_count.get(category,0)+1\n",
+    "most_popular=max(category_count,key=category_count.get)\n",
+    "print('most popular category:',most_popular)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "e4711d89-8d44-4edb-92bb-3defb27b350a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "ali's average:73.0\n",
+      "hasan's average:65.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "#E\n",
+    "students={\n",
+    "    'ali':[62,76,81],\n",
+    "    'hasan':[56,52,87]\n",
+    "}\n",
+    "for name,grades in students.items():\n",
+    "    avg=sum(grades)/len(grades)\n",
+    "    print(f\"{name}'s average:{avg}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "d1735c7d-932a-472a-95e4-53c789641c44",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'laptop': {'quantity': 4, 'price': 1500}, 'mouse': {'quantity': 2, 'price': 500}, 'keyboard': {'quantity': 5, 'price': 650}}\n",
+      "{'laptop': {'quantity': 4, 'price': 1500}, 'mouse': {'quantity': 2, 'price': 500}, 'keyboard': {'quantity': 5, 'price': 650}}\n",
+      "total inventory value: 2922500\n",
+      "low stock items:\n",
+      "laptop -> {'quantity': 4, 'price': 1500}\n",
+      "mouse -> {'quantity': 2, 'price': 500}\n"
+     ]
+    }
+   ],
+   "source": [
+    "#F:\n",
+    "inventory={}\n",
+    "inventory['laptop']={'quantity':4,'price':1500}\n",
+    "inventory['mouse']={'quantity':2,'price':500}\n",
+    "inventory['keyboard']={'quantity':5,'price':650}\n",
+    "print(inventory)\n",
+    "inventory['laptop']['quantity']= 4\n",
+    "print(inventory)\n",
+    "total_value=0\n",
+    "for item in inventory:\n",
+    "    quantity=inventory[item]['price'] \n",
+    "    price=inventory[item]['price']\n",
+    "    total_value+=quantity*price\n",
+    "print('total inventory value:',total_value)\n",
+    "print('low stock items:')\n",
+    "for item in inventory:\n",
+    "    if inventory [item]['quantity']<5:\n",
+    "        print(item,'->',inventory[item])\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "5d255c71-9409-414d-b13f-87c3ddcb6c8b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "kashif's average: 90.0\n",
+      "atif's average: 80.5\n"
+     ]
+    }
+   ],
+   "source": [
+    "#G:\n",
+    "students = {\n",
+    "    \"kashif\": {\"maths\": 88, \"English\": 92},\n",
+    "    \"atif\": {\"chemistry\": 76, \"physics\": 85}\n",
+    "}\n",
+    "for name, subjects in students.items():\n",
+    "    average = sum(subjects.values()) / len(subjects)\n",
+    "    print(f\"{name}'s average: {average}\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3cee3aa0-4ec0-41cf-9807-f0d4ad839fa3",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "anaconda-panel-2023.05-py310",
+   "language": "python",
+   "name": "conda-env-anaconda-panel-2023.05-py310-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
